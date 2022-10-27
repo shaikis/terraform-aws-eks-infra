@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
-    bucket         = "packtclusters-eht-terraform-state"
-    key            = "packtclusters.tfstate"
+    bucket         = "EHTclusters-tio-terraform-state"
+    key            = "EHTclusters.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "packtclusters-eht-vpc-terraform-state-lock-dynamodb"
+    dynamodb_table = "EHTclusters-tio-vpc-terraform-state-lock-dynamodb"
   }
   required_providers {
     aws = {
