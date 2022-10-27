@@ -1,16 +1,4 @@
 aws_region = "us-east-1"
-#private_subnet_ids = [
-#  "subnet-0f2a46d6caa6ee9f1",
-#  "subnet-0ead2f999b67fb259",
-#  "subnet-004f00dea05708ec9",
-#]
-#public_subnet_ids = [
-#  "subnet-0c0aabd26b3950d0b",
-#  "subnet-0dcb720e993b8ad86",
-#  "subnet-029493888b590ab3f",
-#]
-#vpc_id = "vpc-079c2ea97cdc9a94f"
-
 clusters_name_prefix  = "ehtclusters"
 cluster_version       = "1.23"
 workers_instance_type = "t3.medium"
