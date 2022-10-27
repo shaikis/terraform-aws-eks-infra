@@ -10,7 +10,7 @@ if [[ $terraform_state == 1 ]] && [[ $git_status == 1 ]]; then
    cd $HOME
    git clone https://github.com/shaikis/terraform-aws-shared-state.git
    check_clone_status=`ls -ltr $HOME/terraform-aws-shared-state/ |wc -l`
-   if [[ $check_clone_status > 5 ]]; then
+   if [[ $check_clone_status -ge 1 ]]; then
       cd $HOME/terraform-aws-shared-state
       terraform init
       terraform apply -auto-approve
