@@ -11,7 +11,7 @@ aws_region = "us-east-1"
 #]
 #vpc_id = "vpc-079c2ea97cdc9a94f"
 
-clusters_name_prefix  = "EHTclusters"
+clusters_name_prefix  = "ehtclusters"
 cluster_version       = "1.23"
 workers_instance_type = "t3.medium"
 workers_number_min    = 2

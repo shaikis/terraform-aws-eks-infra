@@ -7,7 +7,7 @@ module "vpc" {
   common_tags                     = local.common_tags
 }
 
-module "EHTekscluster" {
+module "ehtekscluster" {
   source                = "git@github.com:shaikis/terraform-aws-eks-cluster.git"
   vpc_id                = module.vpc.eks_cluster_vpc_id
   public_subnets        = module.vpc.eks_public_subnet_ids
@@ -21,8 +21,11 @@ module "EHTekscluster" {
   workers_storage_size  = var.workers_storage_size
   common_tags           = local.common_tags
   aws_region            = var.aws_region
-
-  depends_on = [module.vpc] 
+  depends_on = [
+    module.vpc.eks_cluster_vpc_id,
+    module.vpc.eks_public_subnet_ids,
+    module.vpc.eks_private_subnet_ids
+    ] 
 }
 
 locals {
