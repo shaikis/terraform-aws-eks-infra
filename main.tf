@@ -7,7 +7,7 @@ module "vpc" {
   common_tags                     = local.common_tags
 }
 
-module "packtcluster" {
+module "EHTekscluster" {
   source                = "git@github.com:shaikis/terraform-aws-eks-cluster.git"
   vpc_id                = module.vpc.eks_cluster_vpc_id
   public_subnets        = module.vpc.eks_public_subnet_ids
