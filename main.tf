@@ -21,6 +21,8 @@ module "EHTekscluster" {
   workers_storage_size  = var.workers_storage_size
   common_tags           = local.common_tags
   aws_region            = var.aws_region
+
+  cluster_depends_on = [module.vpc.eks_public_subnet_ids, module.vpc.eks_private_subnet_ids, module.vpc.eks_cluster_vpc_id]
 }
 
 locals {
