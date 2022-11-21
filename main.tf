@@ -1,5 +1,5 @@
 module "vpc" {
-  source                          = "git@github.com:shaikis/terraform-aws-eks-vpc.git"
+  source                          = "git::https://github.com/shaikis/terraform-aws-eks-vpc.git"
   clusters_name_prefix            = var.clusters_name_prefix
   eks_vpc_block                   = var.vpc_block
   eks_public_subnets_prefix_list  = var.public_subnets_prefix_list
@@ -8,7 +8,7 @@ module "vpc" {
 }
 
 module "ehtekscluster" {
-  source                = "git@github.com:shaikis/terraform-aws-eks-cluster.git"
+  source                = "git::https://github.com/shaikis/terraform-aws-eks-cluster.git"
   vpc_id                = module.vpc.eks_cluster_vpc_id
   public_subnets        = module.vpc.eks_public_subnet_ids
   private_subnets       = module.vpc.eks_private_subnet_ids
